@@ -33,7 +33,7 @@ void main() {
     // # Act phase
     // The "act" phase of the test. Call the not-yet-existent method.
     // UseCase should simply return whatever was returned from the Repository
-    final result = await usecase.execute(number: tNumber);
+    final result = await usecase(Params(number: tNumber));
 
     // # Assert phase
     expect(result, const Right(tNumberTrivia));
