@@ -1,7 +1,7 @@
 import 'package:cleanarchitecture_tdd/features/number_trivia/data/models/number_trivia_model.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/entities/number_trivia.dart';
 
 import '../../../../core/error/failures.dart';
