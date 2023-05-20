@@ -29,11 +29,11 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
     on<GetTriviaForRandomNumberEvent>(_handleRandomNumberTrivia);
   }
 
-  void _handleGetConcreteNumberTrivia(
-      GetTriviaForConcreteNumberEvent event, Emitter<NumberTriviaState> emit) {
+  void _handleGetConcreteNumberTrivia(GetTriviaForConcreteNumberEvent event,
+      Emitter<NumberTriviaState> emit) async {
     final inputConverterEither =
         inputConverter.stringToUnsignedInteger(event.numberString);
-    inputConverterEither.fold((failure) {
+    await inputConverterEither.fold((failure) {
       emit(const Error(message: INVALID_INPUT_FAILURE_MESSAGE));
     }, (integer) async {
       emit(Loading());
